@@ -70,8 +70,7 @@ function makeCard(){
  const day=$('day').value.trim(), p1=$('p1').value.trim(), p2=$('p2').value.trim();
  const sets=[
   [$('s1a').value.trim(),$('s1b').value.trim()],
-  [$('s2a').value.trim(),$('s2b').value.trim()],
-  [$('s3a').value.trim(),$('s3b').value.trim()]
+  [$('s2a').value.trim(),$('s2b').value.trim()]
  ].filter(s=>s[0]!==''||s[1]!=='');
  const tba=$('tba').value.trim(), tbb=$('tbb').value.trim();
  const tb=(tba!==''||tbb!=='') ? tba+' – '+tbb : '';
