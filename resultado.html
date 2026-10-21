@@ -100,15 +100,15 @@ function makeCard(){
  const tableX=120, tableW=840, colSet=140, colScore=(tableW-colSet)/2;
  const headerY=650, headerH=72;
  x.fillStyle='#a8ef24';roundRect(x,tableX,headerY,tableW,headerH,10);x.fill();
- x.fillStyle='#121814';x.font='bold 16px Arial';
- x.fillText('SET',tableX+colSet/2,headerY+43);
- x.font='bold 14px Arial';
- x.fillText('PARELLA 1',tableX+colSet+colScore/2,headerY+22);
- x.fillText('PARELLA 2',tableX+colSet+colScore+colScore/2,headerY+22);
- x.font='bold '+fitText(x,p1.toUpperCase(),colScore-18,12,20)+'px Arial';
- x.fillText(p1.toUpperCase(),tableX+colSet+colScore/2,headerY+51);
- x.font='bold '+fitText(x,p2.toUpperCase(),colScore-18,12,20)+'px Arial';
- x.fillText(p2.toUpperCase(),tableX+colSet+colScore+colScore/2,headerY+51);
+ x.fillStyle='#121814';x.font='bold 17px Arial';
+ x.fillText('SET',tableX+colSet/2,headerY+45);
+ x.font='bold 18px Arial';
+ x.fillText('PARELLA 1',tableX+colSet+colScore/2,headerY+24);
+ x.fillText('PARELLA 2',tableX+colSet+colScore+colScore/2,headerY+24);
+ x.font='bold '+fitText(x,p1.toUpperCase(),colScore-18,13,21)+'px Arial';
+ x.fillText(p1.toUpperCase(),tableX+colSet+colScore/2,headerY+53);
+ x.font='bold '+fitText(x,p2.toUpperCase(),colScore-18,13,21)+'px Arial';
+ x.fillText(p2.toUpperCase(),tableX+colSet+colScore+colScore/2,headerY+53);
 
  const startY=732, rowH=62;
  sets.forEach((s,i)=>{
