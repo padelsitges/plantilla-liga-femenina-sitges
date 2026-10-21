@@ -96,15 +96,23 @@ function makeCard(){
 
  x.textAlign='center';x.fillStyle='#cdd6c9';x.font='bold 22px Arial';x.fillText('RESULTAT PER SETS',540,625);
 
- // Capçalera de la taula: deixa clar a quina parella correspon cada puntuació
+ // Taula amb noms de les parelles a sobre de les seves columnes de punts
  const tableX=150, tableW=780, colSet=180, colScore=(tableW-colSet)/2;
- x.fillStyle='#a8ef24';roundRect(x,tableX,650,tableW,48,10);x.fill();
- x.fillStyle='#121814';x.font='bold 18px Arial';
- x.fillText('SET',tableX+colSet/2,680);
- x.fillText('PARELLA 1',tableX+colSet+colScore/2,680);
- x.fillText('PARELLA 2',tableX+colSet+colScore+colScore/2,680);
+ const headerY=650, headerH=62;
+ x.fillStyle='#a8ef24';roundRect(x,tableX,headerY,tableW,headerH,10);x.fill();
+ x.fillStyle='#121814';x.font='bold 15px Arial';
+ x.fillText('SET',tableX+colSet/2,headerY+37);
+ x.font='bold '+fitText(x,'PARELLA 1',colScore-12,12,18)+'px Arial';
+ x.fillText('PARELLA 1',tableX+colSet+colScore/2,headerY+23);
+ x.font='bold '+fitText(x,'PARELLA 2',colScore-12,12,18)+'px Arial';
+ x.fillText('PARELLA 2',tableX+colSet+colScore+colScore/2,headerY+23);
+ x.fillStyle='#121814';
+ x.font='bold '+fitText(x,p1.toUpperCase(),colScore-14,10,16)+'px Arial';
+ x.fillText(p1.toUpperCase(),tableX+colSet+colScore/2,headerY+46);
+ x.font='bold '+fitText(x,p2.toUpperCase(),colScore-14,10,16)+'px Arial';
+ x.fillText(p2.toUpperCase(),tableX+colSet+colScore+colScore/2,headerY+46);
 
- const startY=708, rowH=62;
+ const startY=722, rowH=62;
  sets.forEach((s,i)=>{
    const y=startY+i*rowH;
    x.fillStyle='#1f2821';roundRect(x,tableX,y,tableW,52,10);x.fill();
@@ -117,13 +125,10 @@ function makeCard(){
  if(tb){
    const tbY=startY+sets.length*rowH+2;
    x.fillStyle='#1f2821';roundRect(x,tableX,tbY,tableW,70,12);x.fill();
-   x.fillStyle='#a8ef24';x.font='bold 18px Arial';x.fillText('TIE-BREAK',tableX+colSet/2,tbY+27);
+   x.fillStyle='#a8ef24';x.font='bold 16px Arial';x.fillText('TIE-BREAK',tableX+colSet/2,tbY+40);
    x.fillStyle='#fff';x.font='bold 29px Arial';
-   x.fillText(tba,tableX+colSet+colScore/2,tbY+48);
-   x.fillText(tbb,tableX+colSet+colScore+colScore/2,tbY+48);
-   x.fillStyle='#cdd6c9';x.font='bold 14px Arial';
-   x.fillText('PARELLA 1',tableX+colSet+colScore/2,tbY+65);
-   x.fillText('PARELLA 2',tableX+colSet+colScore+colScore/2,tbY+65);
+   x.fillText(tba,tableX+colSet+colScore/2,tbY+43);
+   x.fillText(tbb,tableX+colSet+colScore+colScore/2,tbY+43);
  }
  x.fillStyle='#a8ef24';x.fillRect(165,980,750,3);
  x.fillStyle='#fff';x.font='bold 23px Arial';x.fillText('🎾  LLIGA FEMENINA PÀDEL SITGES',540,1025);
